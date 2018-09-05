@@ -9,4 +9,4 @@ $git clone https://github.com/waltercostamb/Profiling_metagenomes
 
 To profile a set of metagenome files, follow the directions of the pdf tutorial file. All required scripts are in the repository as well. 
 
-![Pipeline](https://raw.githubusercontent.com/waltercostamb/Profiling_metagenomes/workflow-aquifers-reviewed_03-09-18.pdf)
+![Pipeline](https://github.com/waltercostamb/Profiling_metagenomes/workflow-aquifers-reviewed_03-09-18.pdf)
