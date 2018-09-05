@@ -8,3 +8,5 @@ For cloning the repository, type the following command in a terminal:
 $git clone https://github.com/waltercostamb/Profiling_metagenomes
 
 To profile a set of metagenome files, follow the directions of the pdf tutorial file. All required scripts are in the repository as well. 
+
+![alt text](https://raw.githubusercontent.com/waltercostamb/Profiling_metagenomes/pipeline.pdf)
