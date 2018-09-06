@@ -38,6 +38,6 @@ mgm4739188.3
 mgm4739189.3)
 
 for i in "${mgm_list[@]}"; do
-	curl http://api.metagenomics.anl.gov/download/"${i}"?file=299.1 > ${i}.299.1.gz
+	curl http://api.metagenomics.anl.gov/download/"${i}"?file=299.1 > ${i}.299.1
 	echo "$i has been processed"
 done
