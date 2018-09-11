@@ -28,7 +28,7 @@ GetOptions(
 
 if ($help){
 	print "\nMaria Beatriz Walter Costa (bia.walter\@gmail.com)\n\n";
-	print "This script gets as input FASTA files (Query) and an accession file (AccessionFile) and outputs a FASTA file formatted to the Kraken2 format (http://ccb.jhu.edu/software/kraken/MANUAL.html#custom-databases)\n";
+	print "This script gets as input FASTA files (Query) and one or more accession files (AccessionFile) and outputs a FASTA file formatted to the Kraken2 format (http://ccb.jhu.edu/software/kraken/MANUAL.html#custom-databases)\n";
 	print "\nAny bugs or problems, please contact the developer.\n\n";
 	print "The mandatory arguments are:\n\n";
 	print "--accessionFile\t\tFolder path of accession file(s) (only the folder path, e. g. ``/prj/ebiodiv/maria.costa/Kraken2_DB/taxonomy''\n";
@@ -40,7 +40,9 @@ if ($help){
 	print "--number_sequence\tN (a number to start a counting of the processed genomes, e. g. 0)\n\n"; 
 	print "ATTENTION: do not include the final slash to any of the given paths (``/'')\n";
 	print "IMPORTANT: you can only run this script in a machine with at least X RAM memory, with X being the size of the Accession files.\n\n";
-	print "Usage: $0 --accessionFile FILE_DB --regExpAccessionFile REG_EXP_DB --fileQuery FILE_QUERY --regQuery REG_QUERY --outputFolder OUTPUT_FOLDER --jobID JOB_ID --number_sequence N\n";
+	print "Usage: $0 --accessionFile FILE_DB --regExpAccessionFile REG_EXP_DB --fileQuery FILE_QUERY --regQuery REG_QUERY --outputFolder OUTPUT_FOLDER --jobID JOB_ID --number_sequence N\n\n";
+	print "Example of use with test files of the GITHub Repository:\n";
+	print "perl $0 --accessionFile accessionDB_test --regExpAccessionFile accession --fileQuery test_genomes --regQuery fna --outputFolder test_genomes_out --jobID test_run --number_sequence 0\n";
 	die "\n";
 }
 
