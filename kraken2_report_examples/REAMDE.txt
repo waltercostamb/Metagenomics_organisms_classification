@@ -1,0 +1,10 @@
+
+In this folder, you will find two examples of the output of Kraken2 (with the --report argument).
+These are ready for submission to the steps of the pipeline susequent to the Kraken2 profiling.
+Both examples of the *.report files came originally from the MG-RAST metagenomes: 
+	- mgm4529964.3.299.1.fastq;
+	- mgm4529965.3.299.1.fastq. 
+
+These metagenomes were submitted to the pipeline described in the tutorial, and we obtained the
+files present in this folder after profiling with Kraken2.
+
