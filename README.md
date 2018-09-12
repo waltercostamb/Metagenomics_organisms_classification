@@ -5,7 +5,7 @@ This repository contains a tutorial and scripts for running a profiling pipeline
 
 For cloning the repository, type the following command in a terminal:
 
-$git clone https://github.com/MeirellesLab/Profiling_metagenomes
+$git clone https://github.com/waltercostamb/Profiling_metagenomes
 
 To profile a set of metagenome files, follow the directions of the pdf tutorial file. All required scripts are in the repository as well. 
 
