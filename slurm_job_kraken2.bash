@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Author: Maria Beatriz Walter Costa
-#Script submit jobs to the queue for profiling filtered FASTA files from NGS to Kraken2 using a custom Database
+#This script submit jobs to the slurm queue for profiling of metagenomes using the Kraken2 tool using a custom Database
 
 #SBATCH --nodes=30 #Numero de Nós
 #SBATCH --ntasks-per-node=1 #Numero de tarefas por Nó
