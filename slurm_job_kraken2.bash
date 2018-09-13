@@ -26,33 +26,40 @@ cd /scratch/ebiodiv/maria.costa/data_aquifer_db_suzana_table_mgm/filtered_prinse
 #ls -lh
 #pwd
 
+#Load appropriate module
 module load kraken2/2.0.6
 
+#Array lista contains the files you wish to filter with PRINSEQ
 lista=(file1_prinseq.good
 file2_prinseq.good
 file3_prinseq.good
 )
 
+#For each of the files in the list, do
 for file in "${lista[@]}"; do
   do
 
+	#Get the variables corresponding to base name of the file, prefix of the file and ids
         base=${file##*/}
         prefix=${base%.*}
         id=${prefix%%_*}
 
+	#Run the command, only if the report file of Kraken2 do not exist in the current directory
 	if [ ! -f ${id}_kraken.report ]
 	  then
 
-###########################################################
-#                                                         #
-#     Change the directory of the Kraken2_DB              #
-#                                                         #
-###########################################################
+		###########################################################
+		#                                                         #
+		#     Change the directory of the Kraken2_DB              #
+		#                                                         #
+		###########################################################
 
+		#Slurm queue command to submit the job
 		srun -N 30 -n 1 -c 5 --partition=cpu kraken2 --db /scratch/ebiodiv/maria.costa/Kraken2_DB --threads 5 $file --output ${id}_kraken.profiled --use-names --report ${id}_kraken.report 
 		echo "Produced profile and report for file: ${file}!"
 		
 	else 	
+		#If there is already a report file from Kraken2, then the program will run overwrite this file
 		echo "${id}_kraken.report already exists!"
 	fi
 

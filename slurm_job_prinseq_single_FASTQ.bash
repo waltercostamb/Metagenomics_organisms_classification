@@ -54,6 +54,7 @@ mgm4569552)
 
 for i in "${lista[@]}"
   do
+	#This command submits jobs to the slurm queue
 	srun -N 21 -n 1 -c 1 /scratch/app/prinseq/0.20.4/bin/prinseq-lite.pl -verbose -fastq ${i}.3.299.1.fastq -min_len 80 -ns_max_p 2 -out_format 1 
 
   done

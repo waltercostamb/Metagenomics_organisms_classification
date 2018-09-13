@@ -73,7 +73,8 @@ mgm4739189)
 
 for i in "${lista[@]}"
   do
-	srun -N 21 -n 1 -c 1 /scratch/app/prinseq/0.20.4/bin/prinseq-lite.pl -verbose -fasta ${i}.3.299.1.fasta -min_len 80 -ns_max_p 2 -out_format 1
+	#This command submits jobs to the slurm queue
+  	srun -N 21 -n 1 -c 1 /scratch/app/prinseq/0.20.4/bin/prinseq-lite.pl -verbose -fasta ${i}.3.299.1.fasta -min_len 80 -ns_max_p 2 -out_format 1
 
   done
 
