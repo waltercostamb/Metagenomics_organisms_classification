@@ -5,4 +5,6 @@ This repository contains a tutorial and scripts for running a profiling pipeline
 
 To profile a set of metagenome files, follow the directions of the pdf tutorial file. All required scripts and example files are in the repository as well. 
 
+**Pipeline in graphical form**
+
 ![Pipeline in graphical form](https://github.com/waltercostamb/Profiling_metagenomes/blob/master/workflow-aquifers.png)
