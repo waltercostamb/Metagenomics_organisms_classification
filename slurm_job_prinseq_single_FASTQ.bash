@@ -2,7 +2,7 @@
 
     #Maria Beatriz Walter Costa
 
-    #This script submits jobs to the slurm queueing system of the SDU supercomputer. It takes an array of IDs as input. You need to change the array @lista to include your IDs. You also need to change the directory (see marked warnings #########Warnings#########).
+    #This script submits jobs to the slurm queueing system. It takes an array of IDs as input. You need to change the array @lista to include your IDs. You also need to change the directory (see marked warnings #########Warnings#########).
 	
     #Usage: $bash SCRIPT
 
@@ -25,7 +25,7 @@
     ####################################
 
     #Here you need to change the directory to your working directory
-    cd /scratch/ebiodiv/maria.costa/data_aquifer_db_suzana_table_mgm/
+    cd $PATH
 
     #Commands below are only to test the script, if it correctly changed the directory
     #ls -lh
@@ -55,7 +55,7 @@ mgm4569552)
 for i in "${lista[@]}"
   do
 	#This command submits jobs to the slurm queue
-	srun -N 21 -n 1 -c 1 /scratch/app/prinseq/0.20.4/bin/prinseq-lite.pl -verbose -fastq ${i}.3.299.1.fastq -min_len 80 -ns_max_p 2 -out_format 1 
+	srun -N 21 -n 1 -c 1 $PATH/bin/prinseq-lite.pl -verbose -fastq ${i}.3.299.1.fastq -min_len 80 -ns_max_p 2 -out_format 1 
 
   done
 
