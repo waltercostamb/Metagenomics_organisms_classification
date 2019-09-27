@@ -20,7 +20,7 @@ cd $SCRATCH
 #     Change the directory to your working directory      #
 #                                                         #
 ###########################################################
-cd /scratch/ebiodiv/maria.costa/data_aquifer_db_suzana_table_mgm/filtered_prinseq_good
+cd $PATH/filtered_prinseq_good
 
 #Below commands are controls to know if we are in the correct folder to run the jobs
 #ls -lh
@@ -55,7 +55,7 @@ for file in "${lista[@]}"; do
 		###########################################################
 
 		#Slurm queue command to submit the job
-		srun -N 30 -n 1 -c 5 --partition=cpu kraken2 --db /scratch/ebiodiv/maria.costa/Kraken2_DB --threads 5 $file --output ${id}_kraken.profiled --use-names --report ${id}_kraken.report 
+		srun -N 30 -n 1 -c 5 --partition=cpu kraken2 --db $PATH/Kraken2_DB --threads 5 $file --output ${id}_kraken.profiled --use-names --report ${id}_kraken.report 
 		echo "Produced profile and report for file: ${file}!"
 		
 	else 	
