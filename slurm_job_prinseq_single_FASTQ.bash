@@ -2,18 +2,18 @@
 
     #Maria Beatriz Walter Costa
 
-    #This script submits jobs to the slurm queueing system. It takes an array of IDs as input. You need to change the array @lista to include your IDs. You also need to change the directory (see marked warnings #########Warnings#########).
+    #This script submits jobs to the slurm queueing system. It takes an array of IDs as input. You need to change the array 
+    #@lista to include your IDs. You also need to change the directory (see marked warnings #########Warnings#########).
 	
     #Usage: $bash SCRIPT
 
-    #SBATCH --nodes=21 				#Numero de Nós
-    #SBATCH --ntasks-per-node=1 		#Numero de tarefas por Nó
-    #SBATCH --cpus-per-task=1 			#Numero de threads
+    #SBATCH --nodes=21 		
+    #SBATCH --ntasks-per-node=1 	
+    #SBATCH --cpus-per-task=1 		
     #SBATCH -p cpu
-    #SBATCH -J limpeza_prinseq_SRR1283371 	#Nome job
-    ##SBATCH --time=24:00:00	         	#Altera o tempo limite para 24 horas
+    #SBATCH -J limpeza_prinseq_SRR1283371 	
+    ##SBATCH --time=24:00:00	         	
  
-    #Exibe os nós alocados para o Job
     echo $SLURM_JOB_NODELIST
     nodeset -e $SLURM_JOB_NODELIST
     cd $SCRATCH
@@ -42,20 +42,12 @@
     ####################################
     lista=(mgm4529964
 mgm4529965
-mgm4536074
-mgm4536100
-mgm4536472
-mgm4536473
-mgm4536476
-mgm4569549
-mgm4569550
-mgm4569551
-mgm4569552)
+mgm4536074)
 
 for i in "${lista[@]}"
   do
 	#This command submits jobs to the slurm queue
-	srun -N 21 -n 1 -c 1 $PATH/bin/prinseq-lite.pl -verbose -fastq ${i}.3.299.1.fastq -min_len 80 -ns_max_p 2 -out_format 1 
+	srun -N 21 -n 1 -c 1 $PATH/bin/prinseq-lite.pl -verbose -fastq ${i}.fastq -min_len 80 -ns_max_p 2 -out_format 1 
 
   done
 
