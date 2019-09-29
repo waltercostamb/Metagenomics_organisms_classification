@@ -31,9 +31,9 @@ if ($help){
 	print "This script gets as input FASTA files (Query) and one or more accession files (AccessionFile) and outputs a FASTA file formatted to the Kraken2 format (http://ccb.jhu.edu/software/kraken/MANUAL.html#custom-databases)\n";
 	print "\nAny bugs or problems, please contact the developer.\n\n";
 	print "The mandatory arguments are:\n\n";
-	print "--accessionFile\t\tFolder path of accession file(s) (only the folder path, e. g. ``/prj/ebiodiv/maria.costa/Kraken2_DB/taxonomy''\n";
+	print "--accessionFile\t\tFolder path of accession file(s) (only the folder path, e. g. ``$PATH/taxonomy''\n";
 	print "--regExpAccessionFile\tRegular expression for the Accession file(s) (file ending, e. g. ``accession2taxid'')\n";
-	print "--fileQuery\t\tFolder path of the FASTA genomes (query, e. g. ``/prj/ebiodiv/maria.costa/Kraken2_DB_700_genomes_custom_data/genomes_BioProject_NCBI_PRJNA273161/ncbi-genomes-2018-06-20'')\n";
+	print "--fileQuery\t\tFolder path of the FASTA genomes (query, e. g. ``$PATH/file-genomes'')\n";
 	print "--regQuery\t\tRegular expression for the FASTA files (e. g. ``fna'', ``fasta'')\n";
 	print "--outputFolder\t\tThe output folder\n";
 	print "--jobID\t\t\tThe jobID (unmatched sequences will be stored in a file named after the jobID)\n"; 
@@ -50,8 +50,6 @@ if ($help){
 #################### Main Program ####################### 
 
 my $output_file_unmatched_sequences = "report_unmatched_sequences_$job_ID.txt";
-
-
 
 my $marker;
 my $fh;
