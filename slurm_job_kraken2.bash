@@ -3,13 +3,12 @@
 #Author: Maria Beatriz Walter Costa
 #This script submit jobs to the slurm queue for profiling of metagenomes using the Kraken2 tool using a custom Database
 
-#SBATCH --nodes=30 #Numero de Nós
-#SBATCH --ntasks-per-node=1 #Numero de tarefas por Nó
-#SBATCH --cpus-per-task=5 #Numero de threads
+#SBATCH --nodes=30 
+#SBATCH --ntasks-per-node=1 
+#SBATCH --cpus-per-task=5 
 #SBATCH --partition=cpu
-#SBATCH -J profile_kraken2 #Nome job
-##SBATCH --time=24:00:00	         #Altera o tempo limite para 24 horas
-#Exibe os nós alocados para o Job
+#SBATCH -J profile_kraken2 
+##SBATCH --time=24:00:00
 
 echo $SLURM_JOB_NODELIST
 nodeset -e $SLURM_JOB_NODELIST
