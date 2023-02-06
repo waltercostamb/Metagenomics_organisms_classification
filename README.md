@@ -1,7 +1,7 @@
 # Metagenomics_organisms_classification
 
 Author: Maria Beatriz Walter Costa 
-(bia.walter@gmail.com)
+(waltercostamb@gmail.com)
 
 This repository contains a pipeline for classifying organisms of metagenomes using the Kraken2 tool and in-house scripts. 
 
